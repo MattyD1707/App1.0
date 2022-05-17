@@ -18,7 +18,7 @@
     <StackLayout>
         <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="Start" HorizontalOptions="Fill">
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-            <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+            <ContentView Padding="0,20,0,20" VerticalOptions="FillAndExpand">
                 <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
             </ContentView>
         </StackLayout>
@@ -31,7 +31,7 @@
             </StackLayout>
 
         </ScrollView>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="EndAndExpand" HorizontalOptions="Fill" Padding="30,24,30,24">
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="EndAndExpand" HorizontalOptions="Fill" Padding="10,0,10,0">
             <Entry Placeholder="Enter Text Here..." 
                VerticalOptions="EndAndExpand" 
                HorizontalOptions="Fill" 

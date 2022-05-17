@@ -1,12 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App1.Views.SchedulePage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Schedule"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+             x:Class="App1.Views.SchedulePage"
+             xmlns:vm="clr-namespace:App1.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:ScheduleViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="Start" HorizontalOptions="Fill">
+
         </StackLayout>
-    </ContentPage.Content>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Label Text="Schedule:" FontSize="Title"/>
+
+            </StackLayout>
+
+        </ScrollView>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="EndAndExpand" HorizontalOptions="Fill" Padding="0,20,0,20">
+
+        </StackLayout>
+    </StackLayout>
 </ContentPage>
