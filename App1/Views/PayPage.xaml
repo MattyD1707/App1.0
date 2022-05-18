@@ -17,13 +17,39 @@
 
     <StackLayout>
         <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="Start" HorizontalOptions="Fill">
-
+            <Frame BorderColor="Silver">
+                <Label Text="Employee ID:" FontSize="Title"/>
+            </Frame>
         </StackLayout>
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Pay:" FontSize="Title"/>
+
+                <Frame BorderColor="Silver">
+                    <Label Text="Month:" FontSize="Title"/>
+                </Frame>
+                <Frame BorderColor="Silver">
+                    <Label Text="Hours-Worked:" FontSize="Title"/>
+                </Frame>
+                <Frame BorderColor="Silver">
+                    <Label Text="Gross-Pay:" FontSize="Title"/>
+                </Frame>
+                <Frame BorderColor="Silver">
+                    <Label Text="Tax-Deduction:" FontSize="Title"/>
+                </Frame>
+                <Frame BorderColor="Silver">
+                    <Label Text="Net-Pay:" FontSize="Title"/>
+                </Frame>
+                
+                <Grid>
+
+                    <Button Text="Prev" ScaleX="0.8" ScaleY="0.8" HorizontalOptions="Start"/>
+                    <Label Text="--Month--" FontSize="Title" HorizontalOptions="Center"/>
+                    <Button Text="Next" ScaleX="0.8" ScaleY="0.8" HorizontalOptions="End"/>
+
+                </Grid>
 
             </StackLayout>
+
 
         </ScrollView>
         <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="EndAndExpand" HorizontalOptions="Fill" Padding="0,20,0,20">

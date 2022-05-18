@@ -15,6 +15,7 @@ namespace App1.Views
         public SchedulePage()
         {
             InitializeComponent();
+
         }
     }
 }

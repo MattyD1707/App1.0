@@ -80,24 +80,24 @@
     <TabBar>
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
     </TabBar>
-    
-    <FlyoutItem Title="Home_Feed" Icon="icon_feed.png">
-        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
-    </FlyoutItem>
 
     <FlyoutItem Title="Profile" Icon="user_icon.png">
         <ShellContent Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Schedule" Icon="icon_about.png">
+    <FlyoutItem Title="Home_Feed" Icon="icon_feed.png">
+        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Schedule" Icon="icons_calendar.png">
         <ShellContent Route="SchedulePage" ContentTemplate="{DataTemplate local:SchedulePage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Pay" Icon="icon_about.png">
+    <FlyoutItem Title="Pay" Icon="icon_pay.png">
         <ShellContent Route="PayPage" ContentTemplate="{DataTemplate local:PayPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Notes" Icon="icon_about.png">
+    <FlyoutItem Title="Notes" Icon="icon_note.png">
         <ShellContent Route="NotesPage" ContentTemplate="{DataTemplate local:NotesPage}" />
     </FlyoutItem>
 
@@ -105,7 +105,7 @@
         <ShellContent Route="HelpPage" ContentTemplate="{DataTemplate local:HelpPage}" />
     </FlyoutItem>
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
-    <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
+    <MenuItem Text="Logout" Icon="icons_logout.png" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
     </MenuItem>
 
     <!--

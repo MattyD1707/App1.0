@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Views.SchedulePage"
              xmlns:vm="clr-namespace:App1.ViewModels"
+             xmlns:controls="clr-namespace:Xamarin.Plugin.Calendar.Controls;assembly=Xamarin.Plugin.Calendar"
              Title="{Binding Title}">
     
     <ContentPage.BindingContext>
@@ -16,18 +17,57 @@
     </ContentPage.Resources>
 
     <StackLayout>
+        
         <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="Start" HorizontalOptions="Fill">
 
         </StackLayout>
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Schedule:" FontSize="Title"/>
-
-            </StackLayout>
-
-        </ScrollView>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="EndAndExpand" HorizontalOptions="Fill" Padding="0,20,0,20">
+        
+        <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+            
+            <Label Text="Schedule:" FontSize="Title"/>
+            
+            <controls:Calendar 
+                CalendarLayout="Week"
+                WeekViewUnit="MonthName"
+                EventIndicatorType="BottomDot"
+                Events="{Binding Events}"  FooterSectionVisible="False">
+                    
+                <controls:Calendar.EventTemplate>
+                        
+                    <DataTemplate>
+                            
+                        <StackLayout Padding="0,20,0,0">
+                                
+                            <Label 
+                                HorizontalOptions="Center"
+                                Text="{Binding Name}"
+                                FontAttributes="Bold"
+                                FontSize="Large" 
+                            />
+                                
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="{Binding Description}"
+                                FontSize="Large"
+                                LineBreakMode="WordWrap" 
+                            />
+                                
+                        </StackLayout>
+                            
+                    </DataTemplate>
+                        
+                </controls:Calendar.EventTemplate>
+                    
+            </controls:Calendar>
+            
 
         </StackLayout>
+
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="EndAndExpand" HorizontalOptions="Fill" Padding="0,0,0,0">
+            <Button Text="Book Holiday" />
+
+        </StackLayout>
+        
     </StackLayout>
+    
 </ContentPage>

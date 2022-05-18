@@ -25,11 +25,15 @@
         </StackLayout>
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Contact Us At The Following:" FontSize="Title"/>
+                <Label Text="Contact Us At The Following:" FontSize="Title" HorizontalOptions="Center"/>
+                <Label Text="ThisEmail@icloud.com" FontSize="Title" HorizontalOptions="Center" Padding="0,20,0,0"/>
+                <Label Text="+44 12546 524865" FontSize="Title" HorizontalOptions="Center" Padding="0,20,0,0"/>
+
 
             </StackLayout>
 
         </ScrollView>
+        <Label Text="Contact is subject to office open hours betweeen 8am-5pm" FontSize="Small" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Padding="0,20,0,0"/>
         <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="EndAndExpand" HorizontalOptions="Fill" Padding="30,24,30,24">
 
         </StackLayout>

@@ -25,10 +25,22 @@
         </StackLayout>
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Profile:" FontSize="Title"/>
-
+                <Frame BorderColor="Silver">
+                    <Label Text="Profile:" FontSize="Title"/>
+                </Frame>
+                <Frame BorderColor="Silver">
+                    <Label Text="Email:" FontSize="Title"/>
+                </Frame>
+                <Frame BorderColor="Silver">
+                    <Label Text="Employee ID:" FontSize="Title"/>
+                </Frame>
+                <Frame BorderColor="Silver">
+                    <Label Text="D.O.B:" FontSize="Title"/>
+                </Frame>
+                <Frame BorderColor="Silver">
+                    <Label Text="Job-Title:" FontSize="Title"/>
+                </Frame>
             </StackLayout>
-
         </ScrollView>
         <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="EndAndExpand" HorizontalOptions="Fill" Padding="0,20,0,20">
 
