@@ -27,13 +27,35 @@
         <ScrollView Grid.Row="1" Orientation="Vertical">
             
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="This is a note!" FontSize="Title"/>
+
+                <ListView x:Name="NotesList" ItemsSource="{Binding Notes}">
+
+                    <ListView.ItemTemplate>
+                        
+                        <DataTemplate>
+
+                            <ViewCell>
+
+                                <Label Text="{Binding NotesText}" FontSize="Large" />
+
+                            </ViewCell>
+                            
+                        </DataTemplate>
+                        
+                    </ListView.ItemTemplate>
+                    
+                </ListView>
             </StackLayout>
+
 
         </ScrollView>
         
         <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="EndAndExpand" HorizontalOptions="Fill" Padding="10,0,10,0">
-            <Entry Placeholder="Enter Text Here..." 
+            <Entry
+               x:Name="NoteInput"
+               Text="{Binding NewNote}"
+               Placeholder="Enter Text Here..." 
+               ReturnCommand="{Binding AddNoteCommand}"
                VerticalOptions="EndAndExpand" 
                HorizontalOptions="Fill" 
                BackgroundColor="{StaticResource Accent}" 
