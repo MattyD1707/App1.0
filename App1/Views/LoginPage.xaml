@@ -37,6 +37,8 @@
                    IsPassword="True"
                    />
             <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+            <Button VerticalOptions="Center" Text="Register" Command="{Binding RegisterCommand}"/>
+            
         </StackLayout>
         
         <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="Start" HorizontalOptions="Fill">

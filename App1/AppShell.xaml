@@ -81,6 +81,10 @@
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
     </TabBar>
 
+    <TabBar>
+        <ShellContent Route="RegisterPage" ContentTemplate="{DataTemplate local:RegisterPage}" />
+    </TabBar>
+
     <FlyoutItem Title="Profile" Icon="user_icon.png">
         <ShellContent Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}" />
     </FlyoutItem>
