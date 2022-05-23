@@ -67,6 +67,7 @@
                    FontSize="Large"
                    />
                 <Button VerticalOptions="Center" Text="Register" Command="{Binding RegisteredCommand}" Clicked="Button_Clicked"/>
+                <Button VerticalOptions="Center" Text="Back" Command="{Binding RegisteredCommand}"/>
 
                 <CollectionView x:Name="collectionView">
                     <CollectionView.ItemTemplate>

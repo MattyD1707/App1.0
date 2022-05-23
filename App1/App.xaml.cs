@@ -23,6 +23,21 @@ namespace App1
             }
         }
 
+        private static FeedDatabase fdatabase;
+
+        public static FeedDatabase FDatabase
+        {
+            get
+            {
+                if (fdatabase == null)
+                {
+                    fdatabase = new FeedDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Feed.db3"));
+                }
+
+                return fdatabase;
+            }
+        }
+
         public App()
         {
             InitializeComponent();
@@ -41,5 +56,6 @@ namespace App1
         protected override void OnResume()
         {
         }
+
     }
 }

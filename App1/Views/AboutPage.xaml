@@ -23,36 +23,38 @@
             </ContentView>
         </StackLayout>
         </StackLayout>
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Padding="20,24,30,24" Spacing="10">
                 <Label Text="Start developing now" FontSize="Title"/>
                 <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="0,0,0,0"/>
-            <ListView x:Name="NotesList" ItemsSource="{Binding FeedNotes}">
 
-                <ListView.ItemTemplate>
-
-                    <DataTemplate>
-
-                        <ViewCell>
-
-                                <Label Text="{Binding FeedNotesText}" FontSize="16" VerticalOptions="StartAndExpand" />
-
-                        </ViewCell>
-
-                    </DataTemplate>
-
-                </ListView.ItemTemplate>
-
-            </ListView>
+                <CollectionView x:Name="collectionViewFeed">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="0,20,0,0">
+                                <Frame BorderColor="Silver" Padding="20,20,0,0">
+                                    <StackLayout>
+                                        <Label Text="{Binding Date}"
+                                            VerticalOptions="End"
+                                           FontSize="Small"/>
+                                        <Label Text="{Binding Text}"
+                                            VerticalOptions="Start"
+                                           FontSize="Large"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
             </StackLayout>
 
         </ScrollView>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="EndAndExpand" HorizontalOptions="Fill" Padding="10,0,10,0">
+        <Grid BackgroundColor="{StaticResource Accent}" VerticalOptions="EndAndExpand" HorizontalOptions="Fill" Padding="10,0,10,0">
             <Entry
                x:Name="NoteInput"
                Text="{Binding NewFeedNote}"
                Placeholder="Enter Text Here..." 
-               ReturnCommand="{Binding AddFeedNoteCommand}"
                VerticalOptions="EndAndExpand" 
                HorizontalOptions="Fill" 
                BackgroundColor="{StaticResource Accent}" 
@@ -61,7 +63,8 @@
                TextColor="White"
                PlaceholderColor="White"
                />
-        </StackLayout>
+            <Button HorizontalOptions="End" FontSize="Large" Text="+" Clicked="Button_Clicked" Command="{Binding AddFeedNoteCommand}"/>
+        </Grid>
     </StackLayout>
 
 </ContentPage>

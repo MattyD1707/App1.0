@@ -15,7 +15,7 @@ namespace App1.ViewModels
         }
         private async void OnRegisteredClicked(object obj)
         {
-            //await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+            await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
         }
     }
 }

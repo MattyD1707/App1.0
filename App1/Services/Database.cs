@@ -19,9 +19,9 @@ namespace App1
             return _database.Table<User>().ToListAsync();
         }
 
-        public Task<int> SaveUserAsync(User person)
+        public Task<int> SaveUserAsync(User user)
         {
-            return _database.InsertAsync(person);
+            return _database.InsertAsync(user);
         }
     }
 }

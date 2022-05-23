@@ -22,6 +22,7 @@ namespace App1.Views
         {
             base.OnAppearing();
             collectionView.ItemsSource = await App.Database.GetUserAsync();
+
         }
         async void Button_Clicked(object sender, EventArgs e)
         {

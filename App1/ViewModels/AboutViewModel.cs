@@ -3,6 +3,10 @@ using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
+using System.IO;
+using System.Threading.Tasks;
+using SQLite;
+using System.Collections.Generic;
 
 namespace App1.ViewModels
 {
@@ -15,15 +19,25 @@ namespace App1.ViewModels
             Title = "Home_Feed";
 
             FeedNotes = new ObservableCollection<FeedNoteModel>();
-            FeedNotes.Add(new FeedNoteModel("note 1", false));
+           // FeedNotes.Add(new FeedNoteModel("note 1", false));
         }
         public ICommand AddFeedNoteCommand => new Command(AddFeedNote);
         public string NewFeedNote { get; set; }
 
-        void AddFeedNote()
+        public void AddFeedNote()
         {
-            FeedNotes.Add(new FeedNoteModel(DateTime.Now + " " + NewFeedNote, false));
+            string note = NewFeedNote;
+            App.FDatabase.SaveFeedAsync(new Feed
+            {
+                Date = DateTime.Now,
+                Text = note
+
+            });
+         //   FeedNotes.Add(new FeedNoteModel(DateTime.Now + " " + NewFeedNote, false));
+
         }
+
+
 
     }
 }
