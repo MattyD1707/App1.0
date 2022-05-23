@@ -1,12 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using SQLite;
+using App1.ViewModels;
+using System.Linq;
+
 
 namespace App1
 {
     public class Database
     {
-        private readonly SQLiteAsyncConnection _database;
+        public readonly SQLiteAsyncConnection _database;
 
         public Database(string dbPath)
         {
@@ -23,5 +26,8 @@ namespace App1
         {
             return _database.InsertAsync(user);
         }
+
+
+       
     }
 }

@@ -8,6 +8,7 @@
              Shell.NavBarIsVisible="False">
     
     
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Accent">#96d</Color>
@@ -26,19 +27,23 @@
 
         <StackLayout Padding="40,0,40,0" VerticalOptions="CenterAndExpand">
             <Entry Placeholder="Username" 
+                   x:Name="Username"
+                   Text="{Binding Username}"
                    VerticalOptions="EndAndExpand" 
                    HorizontalOptions="Fill" 
                    FontSize="Large"
                    />
             <Entry Placeholder="Password" 
+                   x:Name="Password"
+                   Text="{Binding Password}"
                    VerticalOptions="EndAndExpand" 
                    HorizontalOptions="Fill" 
                    FontSize="Large"
                    IsPassword="True"
                    />
-            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}" Clicked="Button_Clicked"/>
             <Button VerticalOptions="Center" Text="Register" Command="{Binding RegisterCommand}"/>
-            
+
         </StackLayout>
         
         <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="Start" HorizontalOptions="Fill">

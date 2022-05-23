@@ -1,8 +1,7 @@
 ﻿using App1.Views;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace App1.ViewModels
 {
@@ -10,6 +9,10 @@ namespace App1.ViewModels
     {
         public Command LoginCommand { get; }
         public Command RegisterCommand { get; }
+
+        public string Username { get; set; }
+        public string Password { get; set; }
+
         public LoginViewModel()
         {
             LoginCommand = new Command(OnLoginClicked);
@@ -18,13 +21,27 @@ namespace App1.ViewModels
 
         private async void OnLoginClicked(object obj)
         {
-            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-            await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
+
+            var result = await App.Database.GetUserAsync();
+            var getter = result.Where(u => u.UserName.Equals(Username) && u.Password.Equals(Password)).FirstOrDefault();
+
+            if (getter != null)
+            {
+                await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
+            }
+
+            else
+            {
+                return;
+            }
+
         }
         private async void OnRegisterClicked(object obj)
         {
-            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
+
             await Shell.Current.GoToAsync($"//{nameof(RegisterPage)}");
         }
+
+
     }
 }

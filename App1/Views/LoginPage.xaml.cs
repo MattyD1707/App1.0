@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using App1;
 
 namespace App1.Views
 {
@@ -16,6 +17,13 @@ namespace App1.Views
         {
             InitializeComponent();
             this.BindingContext = new LoginViewModel();
+
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Username.Text = "";
+            Password.Text = "";
         }
     }
 }
