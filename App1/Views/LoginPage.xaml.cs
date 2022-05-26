@@ -20,8 +20,9 @@ namespace App1.Views
 
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
+            await Task.Delay(1000);
             Username.Text = "";
             Password.Text = "";
         }

@@ -26,19 +26,19 @@
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
                 <Frame BorderColor="Silver">
-                    <Label Text="Profile:" FontSize="Title"/>
+                    <Label x:Name="User" Text="Profile:" FontSize="Title"/>
                 </Frame>
                 <Frame BorderColor="Silver">
-                    <Label Text="Email:" FontSize="Title"/>
+                    <Label x:Name="Email" Text="Email:" FontSize="Title"/>
                 </Frame>
                 <Frame BorderColor="Silver">
-                    <Label Text="Employee ID:" FontSize="Title"/>
+                    <Label x:Name="UserID" Text="Employee ID:" FontSize="Title"/>
                 </Frame>
                 <Frame BorderColor="Silver">
-                    <Label Text="D.O.B:" FontSize="Title"/>
+                    <Label x:Name="UserDOB" Text="D.O.B:" FontSize="Title"/>
                 </Frame>
                 <Frame BorderColor="Silver">
-                    <Label Text="Job-Title:" FontSize="Title"/>
+                    <Label x:Name="UserJT" Text="Job-Title:" FontSize="Title"/>
                 </Frame>
             </StackLayout>
         </ScrollView>

@@ -15,7 +15,6 @@ namespace App1.ViewModels
             Title = "Notes";
 
             Notes = new ObservableCollection<NoteModel>();
-            Notes.Add(new NoteModel("note 1", false));
         }
 
         public ICommand AddNoteCommand => new Command(AddNote);
